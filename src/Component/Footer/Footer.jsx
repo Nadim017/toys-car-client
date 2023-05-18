@@ -3,9 +3,9 @@ import logo from '../../assets/car_logo.png';
 
 const Footer = () => {
   return (
-    <footer className="footer p-10 bg-neutral text-neutral-content">
+    <footer className="footer p-10 bg-neutral text-neutral-content grid md:grid-cols-3">
       <div>
-        <img src={logo} className="h-[50px] w-[50px]" alt="" />
+        <img src={logo} className="h-[50px] w-[50px] rounded-full" alt="" />
         <p className="font-bold text-xl">Toy Cars Shop</p>
         Providing reliable Car Toys since 1992
       </div>
@@ -57,7 +57,7 @@ const Footer = () => {
         <div className="relative">
           <input
             type="text"
-            placeholder="username@site.com"
+            placeholder="your email"
             className="input input-bordered w-full pr-16"
           />
           <button className="btn btn-primary absolute top-0 right-0 rounded-l-none">
@@ -65,7 +65,6 @@ const Footer = () => {
           </button>
         </div>
       </div>
-      <div></div>
     </footer>
   );
 };

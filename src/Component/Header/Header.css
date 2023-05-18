@@ -1,9 +1,10 @@
 .nav_items a {
   list-style: none;
   margin-right: 30px;
-  font-size: 20px;
+  font-size: 18px;
 }
 .brand_title img {
   height: 50px;
   width: 50px;
+  border-radius: 100%;
 }

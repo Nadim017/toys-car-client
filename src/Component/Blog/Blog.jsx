@@ -4,7 +4,7 @@ const Blog = () => {
   return (
     <div className="container mx-auto my-5">
       <h3 className="text-2xl mb-2 font-bold">
-        1.What is an access token and refresh token? How do they work and where
+        1. What is an access token and refresh token? How do they work and where
         should we store them on the client-side?
       </h3>
       <p className="text-xl">
@@ -26,7 +26,7 @@ const Blog = () => {
       </p>
       <br />
       <h3 className="text-2xl mb-2 font-bold">
-        2.Compare SQL and NoSQL databases?
+        2. Compare SQL and NoSQL databases?
       </h3>
       <p className="text-xl">
         <span className="font-bold">Ans : </span> <br /> SQL databases: <br />*
@@ -46,7 +46,7 @@ const Blog = () => {
       </p>
       <br />
       <h3 className="text-2xl mb-2 font-bold">
-        3.What is express js? What is Nest JS?
+        3. What is express js? What is Nest JS?
       </h3>
       <p className="text-xl">
         <span className="font-bold">Ans : </span>Express.js is a minimalistic
