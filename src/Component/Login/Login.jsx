@@ -54,12 +54,12 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="w-3/2 mx-auto">
       <h2 className="text-center text-2xl font-bold mt-5 mb-2">
         Please login :
       </h2>
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content">
+      <div className="hero  bg-base-200 w-full ">
+        <div className="hero-content w-full">
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body">
               <div className="form-control">
@@ -83,12 +83,18 @@ const Login = () => {
                 />
                 <label className="label">
                   <p href="#" className="label-text-alt link link-hover">
-                    don't have an account? <Link to="/register">Register</Link>
+                    don't have an account?
+                    <Link to="/register" className="underline text-blue-300">
+                      Register
+                    </Link>
                   </p>
                 </label>
               </div>
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
+              </div>
+              <div className="form-control mt-6">
+                <button className="btn btn-secondary">Google Sign In</button>
               </div>
             </div>
           </div>
