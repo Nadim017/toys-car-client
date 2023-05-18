@@ -1,15 +1,16 @@
 import React from 'react';
+import logo from '../../assets/car_logo.png';
 
 const Footer = () => {
   return (
-    <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
-      <div className="grid grid-flow-col gap-4">
-        <a className="link link-hover">About us</a>
-        <a className="link link-hover">Contact</a>
-        <a className="link link-hover">Jobs</a>
-        <a className="link link-hover">Press kit</a>
+    <footer className="footer p-10 bg-neutral text-neutral-content">
+      <div>
+        <img src={logo} className="h-[50px] w-[50px]" alt="" />
+        <p className="font-bold text-xl">Toy Cars Shop</p>
+        Providing reliable Car Toys since 1992
       </div>
       <div>
+        <span className="footer-title">Social Links</span>
         <div className="grid grid-flow-col gap-4">
           <a>
             <svg
@@ -46,9 +47,25 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <div>
-        <p>Copyright © 2023 - All right reserved by Toy Cars Shop</p>
+
+      <div className="form-control w-80">
+        <label className="label">
+          <span className="label-text text-center text-white">
+            Enter your email address
+          </span>
+        </label>
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="username@site.com"
+            className="input input-bordered w-full pr-16"
+          />
+          <button className="btn btn-primary absolute top-0 right-0 rounded-l-none">
+            Subscribe
+          </button>
+        </div>
       </div>
+      <div></div>
     </footer>
   );
 };
