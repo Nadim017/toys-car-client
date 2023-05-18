@@ -53,7 +53,7 @@ const Login = () => {
         <div className="hero-content w-full">
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body">
-              <form className="shadow-lg">
+              <form onSubmit={handleSignIn} className="shadow-lg">
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Email</span>
@@ -62,6 +62,7 @@ const Login = () => {
                     type="text"
                     placeholder="email"
                     className="input input-bordered"
+                    name="email"
                   />
                 </div>
                 <div className="form-control">
@@ -69,9 +70,10 @@ const Login = () => {
                     <span className="label-text">Password</span>
                   </label>
                   <input
-                    type="text"
+                    type="password"
                     placeholder="password"
                     className="input input-bordered"
+                    name="password"
                   />
                   <label className="label">
                     <p href="#" className="label-text-alt link link-hover">
