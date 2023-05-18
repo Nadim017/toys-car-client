@@ -1,0 +1,9 @@
+.nav_items a {
+  list-style: none;
+  margin-right: 30px;
+  font-size: 20px;
+}
+.brand_title img {
+  height: 50px;
+  width: 50px;
+}
