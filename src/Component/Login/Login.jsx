@@ -1,15 +1,13 @@
 import React, { useContext, useState } from 'react';
 
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { authContext } from '../../Component/AuthProvider/AuthProviders';
-
-import Register from './../Register/Register';
 
 const Login = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
-  const { signIn, GoogleSignIn, githubSign } = useContext(authContext);
+  const { signIn, GoogleSignIn } = useContext(authContext);
   const navigate = useNavigate();
   const from = location.state?.from?.pathName || '/';
   const handleSignIn = (event) => {
