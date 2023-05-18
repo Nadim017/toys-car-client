@@ -16,7 +16,7 @@ const Header = () => {
         <Link>My Toys</Link>
         <Link>Add A Toy</Link>
         <Link to="/blog">Blogs</Link>
-        <Link>Login</Link>
+        <Link to="/login">Login</Link>
 
         <div>
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
