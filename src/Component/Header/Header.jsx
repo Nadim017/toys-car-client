@@ -23,7 +23,7 @@ const Header = () => {
       </div>
       <div className="nav_items ">
         <NavLink to="/">Home</NavLink>
-        <NavLink>All Toys</NavLink>
+        <NavLink to="/alltoys">All Toys</NavLink>
         <NavLink to="/blog">Blogs</NavLink>
 
         {user ? (
