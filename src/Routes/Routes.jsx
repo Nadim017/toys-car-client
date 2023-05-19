@@ -6,6 +6,9 @@ import Blog from '../Component/Blog/Blog';
 import Login from '../Component/Login/Login';
 import Register from '../Component/Register/Register';
 import AllToys from '../Component/AllToys/AllToys';
+import SingleToy from '../Component/SingleToy/SingleToy';
+import AddAToy from '../Component/AddAToy/AddAToy';
+import MyToys from '../Component/MyToys/MyToys';
 
 const router = createBrowserRouter([
   {
@@ -32,6 +35,19 @@ const router = createBrowserRouter([
         path: '/alltoys',
         element: <AllToys></AllToys>,
       },
+      {
+        path: '/add',
+        element: <AddAToy></AddAToy>,
+      },
+      {
+        path: '/mytoys',
+        element: <MyToys></MyToys>,
+      },
+      // {
+      //   path:'/toy/:id',
+      //   element: <SingleToy></SingleToy>,
+      //   loader:({params})=>fetch(``)
+      // }
     ],
   },
   {

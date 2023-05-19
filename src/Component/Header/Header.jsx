@@ -6,7 +6,7 @@ import { authContext } from '../AuthProvider/AuthProviders';
 
 const Header = () => {
   const { user, logOut } = useContext(authContext);
-  console.log(user);
+
   const handleLogOut = () => {
     logOut()
       .then()
@@ -28,8 +28,8 @@ const Header = () => {
 
         {user ? (
           <div className="flex items-center">
-            <NavLink>My Toys</NavLink>
-            <NavLink>Add A Toy</NavLink>{' '}
+            <NavLink to="/mytoys">My Toys</NavLink>
+            <NavLink to="/add">Add A Toy</NavLink>{' '}
             <NavLink onClick={handleLogOut} className="btn btn-primary">
               Logout
             </NavLink>
