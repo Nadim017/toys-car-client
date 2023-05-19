@@ -8,3 +8,14 @@
   width: 50px;
   border-radius: 100%;
 }
+
+@media screen and (max-width: 667px) {
+  .nav_items {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .signIn {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}

@@ -3,7 +3,7 @@ import logo from '../../assets/car_logo.png';
 
 const Footer = () => {
   return (
-    <footer className="footer p-10 bg-neutral text-neutral-content grid md:grid-cols-3">
+    <footer className="footer p-10 bg-neutral text-neutral-content grid md:grid-cols-3 mt-5">
       <div>
         <img src={logo} className="h-[50px] w-[50px] rounded-full" alt="" />
         <p className="font-bold text-xl">Toy Cars Shop</p>
