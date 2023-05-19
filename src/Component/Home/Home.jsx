@@ -6,9 +6,8 @@ const Home = () => {
   return (
     <div>
       <Banner></Banner>
-      <div className="grid md:grid-cols-3 sm:grid-flow-col-1">
-        <Gallery></Gallery>
-      </div>
+
+      <Gallery></Gallery>
     </div>
   );
 };
