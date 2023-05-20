@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import MyToys from '../../MyToys/MyToys';
 
 const Toys = ({ toy }) => {
   const { _id, seller, toyName, subCategory, price, availableQuantity } = toy;
@@ -30,6 +31,18 @@ const Toys = ({ toy }) => {
                 <Link to={`/toy/:${_id}`}>View Details button</Link>
               </button>
             </td>
+            {<MyToys></MyToys> ? (
+              <>
+                <td>
+                  <button className="btn btn-primary">Update</button>
+                </td>
+                <td>
+                  <button className="btn btn-primary">Delete</button>
+                </td>
+              </>
+            ) : (
+              ''
+            )}
           </tr>
         </tbody>
       </table>

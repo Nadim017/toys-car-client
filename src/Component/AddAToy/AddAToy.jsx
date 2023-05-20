@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react';
+import Swal from 'sweetalert2';
 
 const AddAToy = () => {
   const handleAdd = (event) => {
@@ -28,8 +29,20 @@ const AddAToy = () => {
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(toyInfo),
     }).then((res) => res.json().then((data) => console.log(data)));
-
-    console.log(toyInfo);
+    Swal.fire({
+      title: 'Do you want to save the changes?',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Save',
+      denyButtonText: `Don't save`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire('Saved!', '', 'success');
+      } else if (result.isDenied) {
+        Swal.fire('Changes are not saved', '', 'info');
+      }
+    });
   };
   return (
     <div className="w-full container mx-auto ">
@@ -57,7 +70,7 @@ const AddAToy = () => {
                     </label>
                     <input
                       type="text"
-                      placeholder="password"
+                      placeholder="name"
                       className="input input-bordered"
                       name="name"
                     />

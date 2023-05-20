@@ -2,13 +2,12 @@ import React, { useEffect, useState } from 'react';
 
 const ShopCategory = () => {
   const [toys, setToys] = useState([]);
-  console.log(toys);
 
   useEffect(() => {
     fetch('https://toys-car-server-sage.vercel.app/toys')
       .then((res) => res.json())
       .then((data) => setToys(data));
-  }, [toys]);
+  }, []);
   return (
     <div>
       <div className="text-center">
