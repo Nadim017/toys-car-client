@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import MyToys from '../../MyToys/MyToys';
+import { authContext } from '../../AuthProvider/AuthProviders';
 
-const Toys = ({ toy }) => {
-  const { _id, seller, toyName, subCategory, price, availableQuantity } = toy;
+const Toys = ({ toy, handleDelete, children, handleUpdate }) => {
+  const { _id, seller, name, sub, price, quantity, email } = toy;
+  console.log({ _id });
+  console.log({ toy });
+  const { user } = useContext(authContext);
+
   return (
     <div className="overflow-x-auto container mx-auto mt-5 mb-5">
       <table className="table w-full">
@@ -16,33 +21,30 @@ const Toys = ({ toy }) => {
             <th>Price</th>
             <th>Available Quantity</th>
             <th>view details</th>
+            {children ? (
+              <>
+                <th></th>
+                <th></th>
+              </>
+            ) : (
+              ''
+            )}
           </tr>
         </thead>
         <tbody>
           <tr className="text-center">
             <th>{seller}</th>
-            <td>{toyName}</td>
-            <td>{subCategory}</td>
+            <td>{name}</td>
+            <td>{sub}</td>
             <td>{price}</td>
-            <td>{availableQuantity}</td>
+            <td>{quantity}</td>
             <td>
               <button className="btn btn-primary">
-                {/**<Link to={`/toy/:${_id}`}>View Details button</Link>*/}
-                <Link to={`/toy/:${_id}`}>View Details button</Link>
+                {/**<Link to={`/toy/:${_id}`}>View Details</Link>*/}
+                View Details button
               </button>
             </td>
-            {<MyToys></MyToys> ? (
-              <>
-                <td>
-                  <button className="btn btn-primary">Update</button>
-                </td>
-                <td>
-                  <button className="btn btn-primary">Delete</button>
-                </td>
-              </>
-            ) : (
-              ''
-            )}
+            {children}
           </tr>
         </tbody>
       </table>

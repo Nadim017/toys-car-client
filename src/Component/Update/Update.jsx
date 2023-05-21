@@ -1,14 +1,15 @@
 import React, { useContext, useEffect } from 'react';
 import Swal from 'sweetalert2';
 import { authContext } from '../AuthProvider/AuthProviders';
+import { useLoaderData } from 'react-router-dom';
 
-const AddAToy = () => {
+const Update = () => {
   const { user } = useContext(authContext);
+  const toy = useLoaderData();
   const handleAdd = (event) => {
     event.preventDefault();
 
     const photo = event.target.photo.value;
-    const name = event.target.name.value;
     const seller = event.target.seller.value;
     const email = event.target.email.value;
     const sub = event.target.sub.value;
@@ -25,25 +26,24 @@ const AddAToy = () => {
       rating,
       quantity,
       details,
-      name,
     };
-    console.log({ toyInfo });
-    fetch('https://toys-car-server-sage.vercel.app/toy', {
-      method: 'POST',
+
+    fetch(`https://toys-car-server-sage.vercel.app/toy/${toy._id}`, {
+      method: 'PUT',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(toyInfo),
     }).then((res) => res.json().then((data) => console.log(data)));
     Swal.fire({
       position: 'top-end',
       icon: 'success',
-      title: 'Toy added successfully',
+      title: 'Update successful',
       showConfirmButton: false,
       timer: 1500,
     });
   };
   return (
     <div className="w-full container mx-auto ">
-      <h2 className="text-center text-2xl font-bold mt-5 mb-2">Add Toy :</h2>
+      <h2 className="text-center text-2xl font-bold mt-5 mb-2">Update Toy :</h2>
       <div className="hero  bg-base-200 w-full ">
         <div className="hero-content w-full">
           <div className="card  w-full  shadow-2xl bg-base-100">
@@ -52,13 +52,14 @@ const AddAToy = () => {
                 <div className="flex gap-10">
                   <div className="form-control w-1/2">
                     <label className="label">
-                      <span className="label-text">Phot URL</span>
+                      <span className="label-text">Photo URL</span>
                     </label>
                     <input
                       type="text"
                       placeholder="Photo"
                       className="input input-bordered"
                       name="photo"
+                      defaultValue={toy.photo}
                     />
                   </div>
                   <div className="form-control w-1/2">
@@ -70,6 +71,7 @@ const AddAToy = () => {
                       placeholder="name"
                       className="input input-bordered"
                       name="name"
+                      defaultValue={toy.name}
                     />
                   </div>
                 </div>
@@ -83,6 +85,7 @@ const AddAToy = () => {
                       placeholder="Seller Name"
                       className="input input-bordered"
                       name="seller"
+                      defaultValue={toy.seller}
                     />
                   </div>
                   <div className="form-control w-1/2">
@@ -109,6 +112,7 @@ const AddAToy = () => {
                       placeholder="Sub category"
                       className="input input-bordered"
                       name="sub"
+                      defaultValue={toy.sub}
                     />
                   </div>
                   <div className="form-control w-1/2">
@@ -120,6 +124,7 @@ const AddAToy = () => {
                       placeholder="price"
                       className="input input-bordered"
                       name="price"
+                      defaultValue={toy.price}
                     />
                   </div>
                 </div>
@@ -133,6 +138,7 @@ const AddAToy = () => {
                       placeholder="rating"
                       className="input input-bordered"
                       name="rating"
+                      defaultValue={toy.rating}
                     />
                   </div>
                   <div className="form-control w-1/2">
@@ -144,6 +150,7 @@ const AddAToy = () => {
                       placeholder="Quantity"
                       className="input input-bordered"
                       name="quantity"
+                      defaultValue={toy.quantity}
                     />
                   </div>
                 </div>
@@ -157,6 +164,7 @@ const AddAToy = () => {
                       placeholder="details"
                       className="input input-bordered"
                       name="details"
+                      defaultValue={toy.details}
                     />
                   </div>
                 </div>
@@ -164,7 +172,7 @@ const AddAToy = () => {
                   <input
                     type="submit"
                     className="btn btn-primary"
-                    value="Add"
+                    value="Update"
                   />
                 </div>
               </form>
@@ -176,4 +184,4 @@ const AddAToy = () => {
   );
 };
 
-export default AddAToy;
+export default Update;

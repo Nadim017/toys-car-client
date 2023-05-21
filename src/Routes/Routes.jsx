@@ -9,6 +9,8 @@ import AllToys from '../Component/AllToys/AllToys';
 import SingleToy from '../Component/SingleToy/SingleToy';
 import AddAToy from '../Component/AddAToy/AddAToy';
 import MyToys from '../Component/MyToys/MyToys';
+import Update from '../Component/Update/Update';
+import PrivateRoutes from './PrivateRoutes';
 
 const router = createBrowserRouter([
   {
@@ -37,17 +39,33 @@ const router = createBrowserRouter([
       },
       {
         path: '/add',
-        element: <AddAToy></AddAToy>,
+        element: (
+          <PrivateRoutes>
+            <AddAToy></AddAToy>
+          </PrivateRoutes>
+        ),
       },
       {
         path: '/mytoys',
-        element: <MyToys></MyToys>,
+        element: (
+          <PrivateRoutes>
+            <MyToys></MyToys>
+          </PrivateRoutes>
+        ),
       },
+      {
+        path: '/update/:id',
+        element: <Update></Update>,
+        loader: ({ params }) =>
+          fetch(`https://toys-car-server-sage.vercel.app/toy/${params.id}`),
+      },
+
       // {
-      //   path:'/toy/:id',
+      //   path: '/toy/:id',
       //   element: <SingleToy></SingleToy>,
-      //   loader:({params})=>fetch(``)
-      // }
+      //   loader: ({ params }) =>
+      //     fetch(`https://toys-car-server-sage.vercel.app/toy/${params.id}`),
+      // },
     ],
   },
   {
