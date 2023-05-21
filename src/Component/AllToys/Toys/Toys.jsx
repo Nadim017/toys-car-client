@@ -10,7 +10,7 @@ const Toys = ({ toy, handleDelete, children, handleUpdate }) => {
 
   return (
     <div className="overflow-x-auto container mx-auto mt-5 mb-5">
-      <table className="table w-full">
+      <table className="table w-full md:w-[100%] sm:w-[100%]">
         {/* head */}
         <thead>
           <tr className="text-center">
@@ -38,10 +38,9 @@ const Toys = ({ toy, handleDelete, children, handleUpdate }) => {
             <td>{price}</td>
             <td>{quantity}</td>
             <td>
-              <button className="btn btn-primary">
-                {/**<Link to={`/toy/:${_id}`}>View Details</Link>*/}
-                View Details button
-              </button>
+              <Link to={`/toy/${_id}`}>
+                <button className="btn btn-primary">View Details button</button>
+              </Link>
             </td>
             {children}
           </tr>
