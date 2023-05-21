@@ -5,8 +5,7 @@ import { authContext } from '../../AuthProvider/AuthProviders';
 
 const Toys = ({ toy, handleDelete, children, handleUpdate }) => {
   const { _id, seller, name, sub, price, quantity, email } = toy;
-  console.log({ _id });
-  console.log({ toy });
+
   const { user } = useContext(authContext);
 
   return (

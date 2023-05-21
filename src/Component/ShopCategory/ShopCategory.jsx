@@ -18,8 +18,15 @@ const ShopCategory = () => {
   };
 
   return (
-    <div className="mt-10">
-      <div className="text-center">
+    <div className="mt-20 mb-10">
+      <div className="mt-5 text-center">
+        <h1 className="text-3xl font-semibold mb-3">Shop Category section </h1>
+        <p className="text-xl  mb-3">
+          Shop Cars is filtered by using subcategory in which tab we will press
+          that tab category items will be displayed.
+        </p>
+      </div>
+      <div className="text-center mt-15">
         <div className="btn-group">
           <button
             className={`btn ${activeTab === 'Sports Car' ? 'btn-active' : ''}`}
